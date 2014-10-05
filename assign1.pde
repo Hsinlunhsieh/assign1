@@ -10,7 +10,8 @@ int h = 50;
 // declare variables
 // --------------------------------------------
 // put your code inside here
-int totalScore = 0;
+int totalScore = 500;
+
 
 // --------------------------------------------
 
@@ -49,6 +50,16 @@ void draw() {
       // -------------------------------------------------
       // put your code inside here
       
+    totalScore=totalScore-50;  
+      
+int r = int(random(6));
+int s = int(random(6));
+int t = int(random(6));
+machine.setSlotFruit(0,r);
+machine.setSlotFruit(1,s);
+machine.setSlotFruit(2,t);
+
+int result = machine.probability(0.1);
       
       // -------------------------------------------------
     }
@@ -62,11 +73,23 @@ void draw() {
       // stop rolling
       // -------------------------------------------------
       // put your code inside here
-      
- 
- 
- 
-      
+int d = machine.getSlotScore(0); 
+int e = machine.getSlotScore(1); 
+int f = machine.getSlotScore(2);
+int h = machine.getSlotScore(3);
+int i = machine.getSlotScore(4);
+int j = machine.getSlotScore(5);
+
+
+int m = machine.getFruitCount(0);
+int n = machine.getFruitCount(1);
+int o = machine.getFruitCount(2);
+int p = machine.getFruitCount(3);
+int q = machine.getFruitCount(4);
+int r = machine.getFruitCount(5);
+
+totalScore=totalScore+d*m+e*n+f*o+h*p+i*q+j*r;
+
       // -------------------------------------------------
     }
     machine.stop();
@@ -83,6 +106,8 @@ void mousePressed() {
     button = !button;
   }  
 }
+
+
 
 
 
